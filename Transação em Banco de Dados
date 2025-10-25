@@ -1,1 +1,11 @@
 ### Banco de dados 
+1. Suponha que exista um sistema de banco de dados que nunca falhe. É necessário haver um gerenciador de recuperação para esse sistema?
+  Resposta: Sim, é necessário. O gerenciador de recuperação (Recovery Manager) não serve apenas para corrigir falhas de hardware ou software,
+  mas também para garantir as propriedades ACID das transações - especialmente atomicidade e durabilidade.
+  
+  Mesmo que um sistema 'nunca falhe', o Recovery Manager é responsável por:
+  1.1. Garantir a atomicidade: se uma transação for cancelada (roolback executado por usuário), o sistema precisa desfazer todas as alterações 
+  parciais feitas por ela.
+  1.2. Garantir a consistência: assegurar que os dados voltem a um estado consistente se a transação for abortada logicamente
+  1.3. Gerenciar logs e checkpoints: manter o registro das operações para garantir o controle de commit e roolback.
+
